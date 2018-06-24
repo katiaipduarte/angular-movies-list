@@ -7,7 +7,7 @@ import { environment } from '@env/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MoviesListApp';
+  title = 'Movies List App';
 
   constructor () {
     console.log('environment', environment);

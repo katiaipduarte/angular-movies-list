@@ -1,2 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap";
+
+$background: #0D285E;
+$background-input: #263854;
+$list-background: #4097BD;
+$font-color: #C5BCBD;
+$font-color: #C5BCBD;
+
+body {
+    background-color: $background;
+    margin: 2em;
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        color: $font-color;
+    }
+    
+    &, input[text], button {
+        font-family: Cambria, Georgia;
+    }
+}
