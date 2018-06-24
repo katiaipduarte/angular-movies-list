@@ -30,7 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 id: 2,
                 name: 'Other movie',
                 category: 'sci-fi',
-                subcategory: 'drama',
+                subcategory: '',
                 actorsList: [
                                 {
                                     id: 4,
@@ -71,6 +71,46 @@ export class InMemoryDataService implements InMemoryDbService {
                 totalAmount: 15000000
             }
         ];
-        return {movies};
+
+        const categories = [
+            {
+                category: "action",
+                subcategory: ["comedy", "crime", "thriller"]
+            }, {
+                category: "animation",
+                subcategory: ["adventure", "comedy", "family"],
+            }, {
+                category: "documentary",
+                subcategory: ["biography", "crime", "history"]
+            }, {
+                category: "horror",
+                subcategory: ["comedy", "drama", "sci-fi"]
+            }, {
+                category: "musical",
+                subcategory: ["comedy", "romance"]
+            }, {
+                category: "war",
+                subcategory: ["action", "biography"]
+            }, {
+                category: "adventure", 
+                subcategory: ["biography", "war"]
+            }, {
+                category: "drama", 
+                subcategory: ["romance", "musical"]
+            }, {
+                category: "sci-fi", 
+                subcategory: ["action", "drama"]
+            }, {
+                category: "mystery", 
+                subcategory: ["adventure", "thriller"]
+            }, {
+                category: "western", 
+                subcategory: ["action", "comedy"]
+            }, {
+                category: "thriller",
+                subcategory: ["action", "mystery"]
+            }
+        ];
+        return {movies, categories};
     }
 }

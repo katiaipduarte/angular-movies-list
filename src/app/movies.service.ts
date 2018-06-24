@@ -5,6 +5,7 @@ import { catchError, map } from 'rxjs/operators';
 
 import { Movie } from './movie';
 import { Actor } from './actor';
+import { MovieCategories } from './movieCategories';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,7 +16,9 @@ const httpOptions = {
 })
 export class MoviesService {
 
-  private moviesAPIUrl = 'api/movies'; // URL to web api
+  // URL to web api
+  private moviesAPIUrl = 'api/movies';
+  private categoriesAPIUrl = 'api/categories';
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +39,13 @@ export class MoviesService {
                         ? results.sort((a, b) => a.totalAmount - b.totalAmount)
                         : results.sort((a, b) => b.totalAmount - a.totalAmount)),
       catchError(this.handleError('getMovies', []))
+    );
+  }
+
+  getMoviesCategories(): Observable<MovieCategories[]> {
+    return this.http.get<MovieCategories[]>(this.categoriesAPIUrl)
+    .pipe(
+      catchError(this.handleError('getMoviesCategories', []))
     );
   }
 }

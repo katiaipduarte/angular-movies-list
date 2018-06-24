@@ -1,3 +1,33 @@
-<p>
-  movies-form works!
-</p>
+<div class="container">
+  <form #movieForm="ngForm">
+
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control" id="name" required maxlength="30">
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select (change)="categoryChange($event)" class="form-control" id="category" required>
+        <option>Select a Category</option>
+        <option *ngFor="let c of moviesCategories" [value]="c.category">
+          {{ c.category }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="subcategory">Subcategory</label>
+      <select class="form-control" id="subcategory">
+        <option>Select a Subcategory</option>
+        <option *ngFor="let subcategory of moviesSubcategories" [value]="subcategory">
+          {{ subcategory }}
+        </option>
+      </select>
+    </div>
+
+    <app-actors></app-actors>
+
+    <button type="submit" class="btn btn-success">Create</button>
+  </form>
+</div>
