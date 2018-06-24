@@ -6,4 +6,5 @@ export class Movie {
     category: string;
     subcategory: string;
     actorsList: Actor[];
+    totalAmount: number;
 }

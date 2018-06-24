@@ -1,0 +1,19 @@
+<h2>Movies</h2>
+
+<select class="form-control" id="orderBy">
+  <option *ngFor="let order of orderBy" [value]="order.value" 
+          (click)="getMoviesByOrder(order.value)">
+          {{order.name}}
+  </option>
+</select>
+
+<ul class="movies">
+  <li *ngFor="let movie of movies">
+    <h4>{{ movie.name }} ({{ movie.category }}/{{ movie.subcategory }})</h4>
+    <p *ngFor="let actor of movie.actorsList">
+      {{actor.name}} <span>{{ actor.salary.toLocaleString('en') }}$</span>
+    </p>
+    <br>
+    <p>TOTAL: <span>{{ movie.totalAmount.toLocaleString('en') }}$</span></p>
+  </li>
+</ul>
