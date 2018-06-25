@@ -11,15 +11,12 @@ export class InMemoryDataService implements InMemoryDbService {
                 subcategory: 'action',
                 actorsList: [
                                 {
-                                    id: 1,
                                     name: 'Harrison Ford',
                                     salary: 20000000
                                 }, {
-                                    id: 2,
                                     name: 'Mark Hamil',
                                     salary: 7000000
                                 }, {
-                                    id: 3,
                                     name: 'Carrie Fisher',
                                     salary: 3000000
                                 }
@@ -33,15 +30,12 @@ export class InMemoryDataService implements InMemoryDbService {
                 subcategory: '',
                 actorsList: [
                                 {
-                                    id: 4,
                                     name: 'Actor 1',
                                     salary: 10000000
                                 }, {
-                                    id: 5,
                                     name: 'Actor 2',
                                     salary: 7000000
                                 }, {
-                                    id: 6,
                                     name: 'Actor 3',
                                     salary: 3000000
                                 }
@@ -55,15 +49,12 @@ export class InMemoryDataService implements InMemoryDbService {
                 subcategory: 'crime',
                 actorsList: [
                                 {
-                                    id: 7,
                                     name: 'Actor 1',
                                     salary: 5000000
                                 }, {
-                                    id: 8,
                                     name: 'Actor 2',
                                     salary: 7000000
                                 }, {
-                                    id: 9,
                                     name: 'Actor 3',
                                     salary: 3000000
                                 }

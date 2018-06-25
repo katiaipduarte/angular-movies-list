@@ -7,7 +7,7 @@
   </option>
 </select>
 
-<ul class="movies">
+<ul id="movies">
   <li *ngFor="let movie of movies">
     <h4>{{ movie.name }} ({{ movie.category }}/{{ movie.subcategory }})</h4>
     <p *ngFor="let actor of movie.actorsList">

@@ -48,4 +48,11 @@ export class MoviesService {
       catchError(this.handleError('getMoviesCategories', []))
     );
   }
+
+  addMovie(newMovie: Movie): Observable<Movie> { 
+    return this.http.post<Movie>(this.moviesAPIUrl, newMovie, httpOptions)
+    .pipe(
+      catchError(this.handleError<Movie>('add movie'))
+    );
+  }
 }
