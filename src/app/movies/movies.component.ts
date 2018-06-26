@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Movie } from '../movie';
 import { MoviesService } from '../movies.service';
@@ -16,7 +17,11 @@ export class MoviesComponent implements OnInit {
               {name: 'Total cost (high to low)', value: 'DESC'}
   ];
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService) {
+    this.moviesService.listen().subscribe((m: any) => {
+      this.updateMoviesList();
+    });
+  }
 
   ngOnInit() {
     this.getMoviesByOrder('ASC');
@@ -25,5 +30,10 @@ export class MoviesComponent implements OnInit {
   getMoviesByOrder(orderBy: string): void {
     this.moviesService.getMovies(orderBy)
       .subscribe(movies => this.movies = movies);
+  }
+
+  updateMoviesList() {
+    const currentOrderBy = (<HTMLInputElement>document.querySelector('#orderBy')).value;
+    this.getMoviesByOrder(currentOrderBy);
   }
 }

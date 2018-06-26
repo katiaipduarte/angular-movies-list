@@ -1,21 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap";
 
-$background: #0D285E;
+$background: #0F1E38;
 $background-input: #263854;
-$list-background: #4097BD;
-$font-color: #C5BCBD;
-$font-color: #C5BCBD;
+$font-color: #7F899A;
 
 body {
     background-color: $background;
     margin: 2em;
+    cursor: default;
     * {
         font-family: Arial, Helvetica, sans-serif;
-        color: $font-color;
+    }
+
+    h1, h2 {
+        color: #4097BD;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 0 0 35px;
     }
     
-    &, input[text], button {
-        font-family: Cambria, Georgia;
+    &, button, label {
+        color: $font-color;
+    }
+    input {
+        &[text] {
+            color: white !important;
+        }
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: white !important;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: white !important;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: white !important;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: white !important;
+        }
+    }
+    
+
+    label {
+        text-transform: uppercase;
+    }
+
+    input, select {
+        border: none !important;
+        color: $font-color !important;
+    }
+
+    select {
+        text-transform: capitalize;
+
+        option {
+            text-transform: capitalize;
+        }
     }
 }

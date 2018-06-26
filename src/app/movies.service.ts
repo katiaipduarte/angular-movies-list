@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Movie } from './movie';
 import { Actor } from './actor';
@@ -19,6 +19,7 @@ export class MoviesService {
   // URL to web api
   private moviesAPIUrl = 'api/movies';
   private categoriesAPIUrl = 'api/categories';
+  private _listners = new Subject<any>();
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +31,14 @@ export class MoviesService {
 
       return of(result as T);
     };
+  }
+
+  listen(): Observable<any> {
+    return this._listners.asObservable();
+  }
+
+  updateMoviesList() {
+    this._listners.next();
   }
 
   getMovies(orderBy: string): Observable<Movie[]> {
@@ -51,7 +60,7 @@ export class MoviesService {
 
   addMovie(newMovie: Movie): Observable<Movie> { 
     return this.http.post<Movie>(this.moviesAPIUrl, newMovie, httpOptions)
-    .pipe(
+    .pipe(    
       catchError(this.handleError<Movie>('add movie'))
     );
   }
