@@ -11,6 +11,7 @@ import { MoviesService } from '../movies.service';
 })
 export class MoviesComponent implements OnInit {
 
+  title = 'Movies List';
   movies: Movie[];
   orderBy = [
               {name: 'Total cost (low to high)', value: 'ASC'},
