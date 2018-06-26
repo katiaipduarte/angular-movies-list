@@ -44,6 +44,10 @@ export class MoviesFormComponent implements OnInit {
     return this.movieForm.controls;
   }
 
+  get formData() {
+    return <FormArray>this.movieForm.get('actorsList');
+  }
+
   // Methods to create form categories dropdowns
   getMoviesCategories(): void {
     this.moviesService.getMoviesCategories()

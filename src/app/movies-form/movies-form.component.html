@@ -44,8 +44,7 @@
         <p class="col-2"></p>
       </div>
 
-      <div id="actors-form" formArrayName="actorsList"
-      *ngFor="let actor of movieForm.get('actorsList').controls; let i = index;">
+      <div id="actors-form" formArrayName="actorsList" *ngFor="let actor of formData.controls; let i = index;">
         <div [formGroupName]="i" class="row actor-form">
           <div class="form-group col-5">
             <input type="text" class="form-control" id="actorName" formControlName="actorName" maxlength="30" placeholder="Name">
