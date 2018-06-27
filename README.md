@@ -1,20 +1,20 @@
 # AngularMoviesList
 
 ## Technologies used
-Angular6 for JavaScript framework, with TypeScript and ES6.
-Generate project with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
-Used Webpack as module bundler.
-Bootstrap 4 as a front-end framework.
-FontAwesome for icons.
-SCSS for styling the HTML pages.
-Protractor for E2E testing.
-NPM and Yarn as package managers.
+* Angular6 for JavaScript framework, with TypeScript and ES6.
+* Generate project with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+* Used Webpack as module bundler.
+* Bootstrap 4 as a front-end framework.
+* FontAwesome for icons.
+* SCSS for styling the HTML pages.
+* Protractor for E2E testing.
+* NPM and Yarn as package managers.
 
 ## Components
-Created two components one form listing 'movies', another to create 'movie-form'.
-Create three data models - 'Movie', 'Actor' and 'MovieCategories'.
-Create 'MoviesService' - movies.services.ts - file with the http services used in the app.
-Create dummy data in file in-memory-data.service.ts with HttpClientInMemoryWebApiModule.
+* Created two components one form listing 'movies', another to create 'movie-form'.
+* Create three data models - 'Movie', 'Actor' and 'MovieCategories'.
+* Create 'MoviesService' - movies.services.ts - file with the http services used in the app.
+* Create dummy data in file in-memory-data.service.ts with HttpClientInMemoryWebApiModule.
 
 ## Development server
 
