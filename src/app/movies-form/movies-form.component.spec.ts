@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MoviesFormComponent } from './movies-form.component';
 
 describe('MoviesFormComponent', () => {
@@ -8,7 +8,10 @@ describe('MoviesFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoviesFormComponent ]
+      declarations: [ MoviesFormComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
@@ -17,9 +20,5 @@ describe('MoviesFormComponent', () => {
     fixture = TestBed.createComponent(MoviesFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

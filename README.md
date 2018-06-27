@@ -1,27 +1,30 @@
 # AngularMoviesList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+## Technologies used
+Angular6 for JavaScript framework, with TypeScript and ES6.
+Generate project with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Used Webpack as module bundler.
+Bootstrap 4 as a front-end framework.
+FontAwesome for icons.
+SCSS for styling the HTML pages.
+Protractor for E2E testing.
+NPM and Yarn as package managers.
+
+## Components
+Created two components one form listing 'movies', another to create 'movie-form'.
+Create three data models - 'Movie', 'Actor' and 'MovieCategories'.
+Create 'MoviesService' - movies.services.ts - file with the http services used in the app.
+Create dummy data in file in-memory-data.service.ts with HttpClientInMemoryWebApiModule.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open` for a dev server, it will open in default browser `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Build production
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng build --prod --build-optimizer` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
